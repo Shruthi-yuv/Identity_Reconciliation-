@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +27,7 @@ SECRET_KEY = 'django-insecure-5to9gh*gmtr@6(nwr0odbn=x&smf7%x1dm_zl@nt4c$1hf9j$)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['identity.onrender.com','127.0.0.1']
 
 
 # Application definition
@@ -75,14 +77,16 @@ WSGI_APPLICATION = 'bitespeed.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'bitespeed_db',
-        'USER':'root',
-        'PASSWORD':'root@172008232004',
-        'HOST':'localhost',
-        'PORT':'3306'
-    }
+    'default':dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    # {
+
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'bitespeed_db_byhw',
+    #     'USER':'bitespeed_db_byhw_user',
+    #     'PASSWORD':'LLnub0eLUNNOmYtyDzpgY4uFMJMaS8dx',
+    #     'HOST':'dpg-cuqachggph6c73d07sp0-a.oregon-postgres.render.com',
+    #     'PORT':'5432'
+    # }
 }
 
 
@@ -121,6 +125,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
