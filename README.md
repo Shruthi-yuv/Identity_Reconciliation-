@@ -7,21 +7,21 @@ This project is a Django-based API that implements an Identify Contact endpoint.
  cd Identity_Reconciliation
 
  2.Create a Virtual Environment
-  python -m venv .venv
+ python -m venv .venv
  .venv\Scripts\activate  # Windows
-  source .venv/bin/activate  # Mac/Linux
+ source .venv/bin/activate  # Mac/Linux
 
  3.Install Dependencies
-   pip install -r requirements.txt
+  pip install -r requirements.txt
 
   4.Set Environment Variables
-   DATABASE_URL=postgres://username:password@hostname:port/database_name
+  DATABASE_URL=postgres://username:password@hostname:port/database_name
 
   5.Apply Migrations
   python manage.py migrate
 
-  6. Run the Development Server
-     python manage.py runserver
+   6.Run the Development Server
+   python manage.py runserver
 
   Endpoint - Identify Contact
   URL:POST /contacts/identify/
