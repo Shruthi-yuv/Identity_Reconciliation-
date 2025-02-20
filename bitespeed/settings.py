@@ -81,7 +81,10 @@ WSGI_APPLICATION = 'bitespeed.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default':dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default':dj_database_url.config(
+        default=os.environ.get("DATABASE_URL")
+        )
+}
     # {
 
     #     'ENGINE': 'django.db.backends.postgresql',
@@ -91,7 +94,7 @@ DATABASES = {
     #     'HOST':'dpg-cuqachggph6c73d07sp0-a.oregon-postgres.render.com',
     #     'PORT':'5432'
     # }
-}
+
 
 
 # Password validation

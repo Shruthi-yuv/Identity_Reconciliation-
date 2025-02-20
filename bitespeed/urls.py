@@ -23,4 +23,4 @@ urlpatterns = [
      path('contacts/', include('contacts.urls'))
 ]
 
-urlpatterns += staticfiles_urlpatterns()
+# urlpatterns += staticfiles_urlpatterns()
