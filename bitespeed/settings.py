@@ -85,15 +85,6 @@ DATABASES = {
         default=os.environ.get("DATABASE_URL")
         )
 }
-    # {
-
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': 'bitespeed_db_byhw',
-    #     'USER':'bitespeed_db_byhw_user',
-    #     'PASSWORD':'LLnub0eLUNNOmYtyDzpgY4uFMJMaS8dx',
-    #     'HOST':'dpg-cuqachggph6c73d07sp0-a.oregon-postgres.render.com',
-    #     'PORT':'5432'
-    # }
 
 
 
